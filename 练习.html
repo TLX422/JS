@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        table{
+            width: 100%;
+            /* text-align: center; */
+            border-collapse: collapse;//合并边框
+        }
+        th,td{
+            border: 2px solid grey;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var x=3;
+        let y=4;
+        const p=3;
+        console.log(y,p)
+        console.log(x);
+        let age=19;
+        if (age>18) {
+            console.log('你已经成年'); 
+        }
+        console.log('nhvxcdvddsadas')
+    </script>
+    <button>点击按钮</button>
+    <br>
+    <br>
+    <script>
+        //DOM绑定事件
+        let b=document.getElementsByTagName('button')[0];
+        b.onclick=function(){
+            alert('DOM属性触发')
+        }
+    </script>
+    <h1 style="text-align: center;">表格</h1>
+    <button onclick="addrow()" style="background-color: rgb(243, 232, 110);">新增数据</button>
+    <br>
+    <br>
+    <table id="table">
+        <tr>
+        <th>姓名</th>
+        <th>联系方式</th>
+        <th>操作</th>
+        </tr>
+        <tr>
+            <td>小白</td>
+            <td>183734829</td>
+            <td>
+                <button>编辑</button>
+                <button>删除</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        //新增数据函数
+        function addrow(){
+         var table=document.getElementById('table');
+        //  console.log(table)
+        //获取插入的位置
+        var length=table.rows.length;
+        console.log(length)
+       var newrow= table.insertRow(length);
+         console.log(newrow);
+        //  newrow.innerHTML='185242424';
+         //插入列
+         var namecol=newrow.inserCell(0);
+         var pcol=newrow.inserCell(1);
+         var oamecol=newrow.inserCell(2);
+         console.log(newrow);
+         
+        }
+    </script>
+</body>
+</html>
